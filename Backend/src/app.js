@@ -6,6 +6,6 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 
-app.use("/api/auth",authRouter);
+app.use("/api/auth",authRouter);  // this line redirect all the request with /api/auth to the auth.routes.js
 
 module.exports = app;

@@ -1,11 +1,11 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+
 function connectToDB(){
     mongoose.connect(process.env.MONGO_URI).then(()=>{
-        console.log("Server is connected to database");
+        console.log("Connected to database");
     }).catch(err=>{
-        console.log("Error connecting to database");
-        console.log(err);
-        process.exit(1);  
+        console.log("Error connecting with database");
+        process.exit(1); // this line closes the server in case of connection failure with database
     })
 }
 
